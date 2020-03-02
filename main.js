@@ -42,11 +42,11 @@ function turnOffActions() {
 function onAddGoal(){
     // проверка, что указано имя цели
     let divGoalName = document.getElementById("goalName");
+    let goalNumericArgument = document.getElementById("goalNumericArgument");
     if (!divGoalName.value){
         alert("Укажите название цели!");
         return;
     }
-
 
     // отображаем div с новой целью
     /* добавляем вот такой div:
@@ -60,13 +60,12 @@ function onAddGoal(){
     */
     let divGoals = document.getElementById("goals");    
     let div = document.createElement('div');
-    div.innerHTML = '<div><p style="margin-top: 20px; margin-bottom: 0;">Название цели - 25% (25/100)</p><div class="progress" style="margin-top: 0;"><div class="progress-bar" role="progressbar" style="width: 45%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div></div></div>';
+    div.innerHTML = '<div><p style="margin-top: 20px; margin-bottom: 0;">' + divGoalName.value + ' - 0% (0/' + goalNumericArgument.value + ')</p><div class="progress" style="margin-top: 0;"><div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div></div></div>';
 
     divGoals.appendChild(div);
 
     // очищаем поля ввода
     divGoalName.value = "";
-    let goalNumericArgument = document.getElementById("goalNumericArgument");
     goalNumericArgument.value = "";
     
 }
