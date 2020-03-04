@@ -64,9 +64,14 @@ function onAddGoal(){
 
     divGoals.appendChild(div);
 
+    // сохранение в БД
+    addNewGoal(divGoalName.value, goalNumericArgument.value);
+
     // очищаем поля ввода
     divGoalName.value = "";
     goalNumericArgument.value = "";
+
+
     
 }
 
